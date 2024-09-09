@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Shrekler</title>
+        <link href="./styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    </head>
+
+    <body onkeydown="checkButton(event)">
+        <img class="goldimg" height="60" src="./assets/img/Shrekles.png" alt="A picture of gold bars."><p class="gold"><strong id="goldcount" class="goldcount">0</strong></p>
+        <button id="fullscrbtn" class="fullscrbtn" onclick="toggleFullscreen()"><img id="fullimg" height="40" width="40" src="./assets/img/fullscr.png"></button>
+        <button class="musicbtn" onclick="toggleSettings()"><img height="40" width="40" src="./assets/img/Settings Icon.png"></button>
+        
+        <div id="imagecat">
+            <img id="tlpimg" src="./assets/img/figures/tlp1.png" style="display: none;">
+            <img id="bbwimg" src="./assets/img/figures/bbw1.png" style="display: none;">
+            <img id="pimg" src="./assets/img/figures/p1.png" style="display: none;">
+            <img id="gimg" src="./assets/img/figures/g1.png" style="display: none;">
+            <img id="drimg" src="./assets/img/figures/dr1.png" style="display: none;">
+            <img id="pfimg" src="./assets/img/figures/pf1.png" style="display: none;">
+            <img id="pbimg" src="./assets/img/figures/pb1.png" style="display: none;">
+            <img id="dimg" src="./assets/img/figures/d1.png" style="display: none;">
+        </div>
+        
+        <div id="upgradesmenu" style="display: none;">
+            <button id="herobtn2" onclick="toggleUpgrades()">Back</button>
+            <container id="upgrades" style="display: block;">
+                <label>Upgrades</label>
+                <div id="mm" style="display: none;" onclick="purchaseUpgrades('mm')">
+                    <span class="titletooltip"><p class="upgradetitle title1">Magic Mirror</p><span class="tooltip tooltip1">&#9432;<span class="tooltiptext">x2 hero clicks.</span></span></span>
+                    <img class="upgradeimg" src="./assets/img/gold.png" height="20" width="30">
+                    <strong class="upgradetext">250K</strong>
+                </div>
+                <div id="ex" style="display: none;" onclick="purchaseUpgrades('ex')">
+                    <span class="titletooltip"><p class="upgradetitle title1">Excalibur</p><span class="tooltip tooltip2">&#9432;<span class="tooltiptext">"The Sword of Legends! Still got this stupid rock on it though." x10 clicks.</span></span></span>
+                    <img class="upgradeimg" src="./assets/img/gold.png" height="20" width="30">
+                    <strong class="upgradetext">50K</strong>
+                </div>
+                <div id="per" style="display: none;" onclick="purchaseUpgrades('per')">
+                    <span class="titletooltip"><p class="upgradetitle title1">Perrito's Stick</p><span class="tooltip tooltip3">&#9432;<span class="tooltiptext">x2 clicks.</span></span></span>
+                    <img class="upgradeimg" src="./assets/img/gold.png" height="20" width="30">
+                    <strong class="upgradetext">10K</strong>
+                </div>
+                <div id="mws" style="display: none;" onclick="purchaseUpgrades('mws')">
+                    <span class="titletooltip"><p class="upgradetitle title2">The Map to the Wishing Star</p><span class="tooltip tooltip4">&#9432;<span class="tooltiptext">???</span></span></span>
+                    <img class="upgradeimg" src="./assets/img/gold.png" height="20" width="30">
+                    <strong class="upgradetext">0</strong>
+                </div>
+                <div id="ws" style="display: none;" onclick="purchaseUpgrades('ws')">
+                    <span class="titletooltip"><p class="upgradetitle title1">The Wishing Star</p><span class="tooltip tooltip5">&#9432;<span class="tooltiptext">Grants the wish of whoever possesses it.</span></span></span>
+                    <img id="onei" src="./assets/img/Wishing_Star.png" class="starimg">
+                    <img class="upgradeimg" src="./assets/img/gold.png" height="20" width="30">
+                    <strong class="upgradetext">1B</strong>
+                    <img id="twoi" src="./assets/img/Wishing_Star.png" class="starimg">
+                </div>
+                <div id="rp" style="display: none;" onclick="purchaseUpgrades('rp')">
+                    <span class="titletooltip"><p class="upgradetitle title1">Puss in Boots' Rapier</p><span class="tooltip tooltip6">&#9432;<span class="tooltiptext">x4 clicks.</span></span></span>
+                    <img class="upgradeimg" src="./assets/img/gold.png" height="20" width="30">
+                    <strong class="upgradetext">25K</strong>
+                </div>
+            </container>
+        </div>
+        <img onclick="fight('player')" id="monsterimg" src="./assets/img/ShrekClicker.png" alt="A picture of shrek's face.">
+            <div id="promptbox" style="display: none;">
+                <h2 id="prompttitle">Are you sure?</h2>
+                <p id="prompttext">This action will delete all of your data including gold and music settings. Enter "Restart" below to confirm.</p>
+                <input type="text" placeholder="Restart" id="prompt" onkeyup="if(event.key === 'Enter'){clearData();}">
+                <button id="promptbutton" onclick="clearData();">Confirm</button>
+                <button id="promptbutton2" style="display: none;" onclick="confirmClearData()">Ok.</button>
+            </div>
+        <div id="settingsbox" style="display: none;" onclick="toggleSettings()">
+            <div id="settingsinnerbox" onclick="toggleSettings()">
+                <h2 id="settingstitle">Settings</h2>
+                <button class="settingsbtn" id="musicbtn" onclick="toggleMusic()"><img class="settingsimg" id="musicimg" height="50" width="50" src="./assets/img/nomusic.png"></button>
+                <button class="settingsbtn" id="soundbtn" onclick="toggleSound()"><img class="settingsimg" id="soundimg" height="50" width="50" src="./assets/img/SoundOn.png"></button>
+            </div>
+        </div>
+        <div id="credits" style="display: none;">
+            <h1 id="creditstitle">Credits</h1>
+            <h1 id="shrekler">"Shrekler"</h1>
+            <h3 id="htwo">Programmers</h3>
+            <strong id="stwo">Solomon Latham</strong>
+            <strong id="cone">Christian Latham</strong>
+            <h3 id="hfour">Directors</h3>
+            <strong id="mtwo">Michael Latham</strong>
+            <strong id="sthree">Solomon Latham</strong>
+            <strong id="ctwo">Christian Latham</strong>
+            <h3 id="hfive">Art</h3>
+            <strong id="mthree">Michael Latham</strong>
+            <h2 id="endtext">The End...</h2>
+        </div>
+        <button onclick="confirmClearData()" id="clearbtn">Restart</button>
+        <span onclick="toggleHeroes()" id="herobtn"></span>
+        <span onclick="toggleUpgrades()" id="upgradebtn"></span>
+        <div id="herocarousel" style="display: none;">
+            <button id="fullscrbtn2" class="fullscrbtn" onclick="toggleFullscreen()"><img id="fullimg2" height="40" width="40" src="./assets/img/fullscr.png"></button>
+            <button class="musicbtn" onclick="toggleSettings()"><img height="40" width="40" src="./assets/img/Settings Icon.png"></button>
+            <button id="herobtn2" onclick="toggleHeroes()">Back</button>
+            <h2 id="chartitle">Three Little Pigs</h2>
+            <div class="container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide slide_1"><img class="0img" src="./assets/img/ThreeLittlePigs.jpg"></div>
+                      <div class="swiper-slide slide_2"><p class="question1">?</p><img class="1img" style="display: none;" src="./assets/img/BigBadWolf.jpg"></div>
+                      <div class="swiper-slide slide_3"><p class="question2">?</p><img class="2img" style="display: none;" src="./assets/img/Pinocchio.jpg"></div>
+                      <div class="swiper-slide slide_4"><p class="question3">?</p><img class="3img" style="display: none;" src="./assets/img/Gingy.jpg"></div>
+                      <div class="swiper-slide slide_5"><p class="question4">?</p><img class="4img" style="display: none;" src="./assets/img/Dragon.png"></div>
+                      <div class="swiper-slide slide_6"><p class="question5">?</p><img class="5img" style="display: none;" src="./assets/img/Princess Fiona.jpg"></div>
+                      <div class="swiper-slide slide_7"><p class="question6">?</p><img class="6img" style="display: none;" src="./assets/img/PussInBoots.png"></div>
+                      <div class="swiper-slide slide_8"><p class="question7">?</p><img class="7img" style="display: none;" src="./assets/img/Donkey.jpg"></div>
+                    </div>
+                    <div class="arrowcon"><div class="swiper-button-prev"></div></div>
+                    <div class="arrowcon2"><div class="swiper-button-next"></div></div>
+                </div>
+            </div>
+            <div id="costchar"><img id="costimg" height="30" width="45" src="./assets/img/gold.png"><strong id="chargold">50</strong></div>
+            <button id="purchasebtn" class="purchase" onclick="purchaseChar()"><strong id="purchasetext">Purchase</strong></button>
+        </div>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>

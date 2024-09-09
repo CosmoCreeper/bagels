@@ -1,0 +1,288 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@700&display=swap');
+
+body {
+    background-color: #f3e8dd;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 75em;
+}
+
+::selection {
+    background-color: #eddbc8;
+    color: black;
+}
+
+.hamburger-menu {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    font-size: 40px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    z-index: 4;
+}
+
+.inner {
+    position: fixed;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    cursor: default;
+    background-color: #eddbc8;
+    z-index: 3;
+    box-shadow: 0px 0px 10px 10px #e3d3c3;
+    transition: transform 400ms ease;
+}
+
+.contents {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contents a {
+    font-family: "SUSE";
+    font-size: 25px;
+    display: block;
+    text-decoration: underline;
+    color: black;
+    margin-top: 20px;
+}
+
+.contents a i {
+    font-size: 20px;
+}
+
+.ico-git, .ico-download {
+    position: absolute;
+    bottom: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    color: rgb(52, 52, 58);
+    transition: color 400ms ease;
+}
+
+.ico-git {
+    left: 9px;
+}
+
+.ico-download {
+    left: 50px;
+}
+
+.ico-download:hover, .ico-git:hover, a:hover {
+    color: rgb(68, 68, 218) !important;
+}
+
+.copyright {
+    position: absolute;
+    margin: 0;
+    bottom: 10px;
+    right: 15px;
+    font-family: "Arial";
+    text-decoration: underline transparent;
+    transition: text-decoration-color 400ms ease;
+}
+
+.copyright:hover {
+    text-decoration-color: black;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: "SUSE";
+    margin: 0;
+    margin-top: 40px;
+    text-decoration: underline;
+}
+
+h3, h5 {
+    font-family: "Arial";
+    margin: 0;
+    margin-top: 5px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 12px;
+}
+
+.about-desc {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10vw;
+    font-family: 'Georgia';
+    width: 50vw;
+}
+
+.viewport-gap {
+    margin-top: 76.5vh;
+}
+
+.bi-arrow-down-circle-fill {
+    font-size: 20px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #eddbc8;
+    border-radius: 5px;
+    width: max(50vw, 400px);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5em;
+    height: 400px;
+    box-shadow: 0 0 5px 5px #e3d3c3;
+}
+
+.grid-item {
+    background-color: #f3e8dd;
+    margin-left: 50%;
+    margin-top: 25px;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 350px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 5px #e3d3c3;
+}
+
+.grid-item img {
+    margin-top: 20px;
+}
+
+.grid-item h4 {
+    font-family: "SUSE";
+}
+
+.grid-item p {
+    font-family: "Arial";
+    font-size: 14px;
+    width: max(10vw, 80px);
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.coop-item {
+    position: absolute;
+    left: 50vw;
+    transform: translateX(-50%);
+    margin-top: 10em;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 90vw;
+    text-align: left;
+    margin-left: 0;
+}
+
+.coop-item.two {
+    margin-top: 28em;
+}
+
+.coop-item img {
+    width: 12vw;
+    height: 12vw;
+    transition: width 400ms ease, height 400ms ease, border-color 400ms ease;
+    border: 1px solid transparent;
+    margin-right: 20px;
+}
+
+.coop-item img:hover {
+    border-color: black;
+}
+
+.coop-item h3 {
+    text-decoration: underline transparent;
+    transition: text-decoration-color 400ms ease;
+    width: 80px;
+}
+
+.coop-item h3:hover {
+    text-decoration-color: black;
+}
+
+.coop-item .desc {
+    margin-top: 50px;
+    margin-bottom: 0;
+    width: 40vw;
+    font-family: "Arial";
+}
+
+.coop-item .subtitle {
+    font-size: 12px;
+    margin-top: 3px;
+    margin-bottom: 4vh;
+}
+
+.coop-item ul {
+    margin-top: 70px;
+    list-style-type: none;
+    font-family: "SUSE";
+}
+
+.ico-play {
+    font-size: 25px;   
+}
+  
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    z-index: 2;
+    background-color: #edded0;
+    box-shadow: 0 0 10px 10px #e3d2c3;
+}
+
+footer p {
+    transform: translateX(100%);
+    animation: marquee 5s linear infinite;
+    white-space: pre;
+    font-family: "SUSE";
+}
+
+@-moz-keyframes marquee {
+ 0%   { -moz-transform: translateX(100%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes marquee {
+ 0%   { -webkit-transform: translateX(100%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes marquee {
+ 0%   { 
+ -moz-transform: translateX(100%); /* Firefox bug fix */
+ -webkit-transform: translateX(100%); /* Firefox bug fix */
+ transform: translateX(100%); 		
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ transform: translateX(-100%); 
+ }
+}
+
+a {
+    transition: color 400ms ease;
+    color: black;
+}
+
+img {
+    border-radius: 5px;
+}
+
+@media (max-width: 500px) {
+    .inner {
+        width: 100vw;
+        
+    }
+}

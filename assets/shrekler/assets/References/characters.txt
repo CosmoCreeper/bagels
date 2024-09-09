@@ -1,0 +1,12 @@
+Heroes:
+-Three Little Pigs
+-Big Bad Wolf
+-Pinocchio
+-Gingy
+-Dragon
+-Princess Fiona
+-Puss In Boots
+-Donkey
+
+Upgrades:
+-Magic Mirror

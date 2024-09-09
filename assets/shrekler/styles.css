@@ -1,0 +1,712 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+body {
+  text-align: center;
+  background-image: url("./assets/img/background.png");
+  user-select: none;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center bottom;
+}
+
+.gold {
+  font-size: 40px;
+  margin: 0 auto;
+  width: 10%;
+  color: white;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  z-index: 3;
+}
+
+.goldcount {
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  font-family: "Montserrat";
+  font-size: 45px;
+}
+
+.goldimg {
+  position: absolute;
+  top: 12px;
+  left: 5px;
+  z-index: 3;
+}
+
+#monsterimg {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  bottom: 100px;
+  width: 500px;
+  height: 500px;
+  -webkit-transition-property: height, width;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-property: height, width;
+  -moz-transition-duration: 0.5s;
+  transition-property: height, width;
+  transition-duration: 0.5s;
+}
+
+#monsterimg:hover {
+  width: 600px;
+  height: 600px;
+  -webkit-transition-property: height, width;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-property: height, width;
+  -moz-transition-duration: 0.5s;
+  transition-property: height, width;
+  transition-duration: 0.5s;
+}
+
+#monsterimg:active:hover {
+  width: 550px;
+  height: 550px;
+  -webkit-transition-property: height, width;
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-property: height, width;
+  -moz-transition-duration: 0.25s;
+  transition-property: height, width;
+  transition-duration: 0.25s;
+}
+
+#clearbtn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 10px;
+  background-color: transparent;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  height: 30px;
+  width: 90px;
+  font-size: 15px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  font-family: "Roboto";
+  transition: all 2s;
+  -webkit-transition: all 2s;
+}
+
+#clearbtn:hover {
+  cursor: pointer;
+  transition: all 2s;
+  -webkit-transition: all 2s;
+  backdrop-filter: blur(75px);
+  -webkit-backdrop-filter: blur(75px);
+}
+
+@keyframes clearhover {
+  from {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+  to {
+    backdrop-filter: blur(75px);
+    -webkit-backdrop-filter: blur(75px);
+  }
+}
+
+@keyframes revclearhover {
+  from {
+    backdrop-filter: blur(75px);
+    -webkit-backdrop-filter: blur(75px);
+  }
+  to {
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+}
+
+#upgrades {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 275px;
+  height: 375px;
+  padding: 5px 5px 10px 5px;
+  backdrop-filter: blur(15px);
+  border-radius: 5px;
+  color: rgb(236, 236, 236);
+  font-family: "Montserrat";
+  text-align: center;
+}
+
+#upgrades div {
+  border: solid 2px white;
+  border-radius: 5px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+#upgrades div:hover {
+  cursor: pointer;
+}
+
+.upgradeimg {
+  display: inline;
+  vertical-align: middle;
+}
+
+.upgradetext {
+  display: inline;
+  vertical-align: middle;
+}
+
+.upgradetitle {
+  display: inline;
+  margin: 0;
+  padding: 2px 0px 2px 0px;
+}
+
+.title1 {
+  margin-left: 25px;
+}
+
+.title2 {
+  font-size: 14px;
+}
+
+.titletooltip {
+  display: block;
+}
+
+.musicbtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 50px;
+  width: 50px;
+  border: none;
+  background: transparent;
+  filter: invert(1);
+}
+
+.fullscrbtn {
+  position: absolute;
+  top: 8px;
+  right: 60px;
+  background: transparent;
+  filter: invert(1);
+  border: none;
+}
+
+#promptbox {
+  background: white;
+  color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  height: 200px;
+  width: 500px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#prompttitle {
+  font-family: "Roboto";
+}
+
+#prompttext {
+  font-family: "Montserrat";
+}
+
+#prompt {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  border-radius: 2px;
+  background-color: rgb(14, 14, 14);
+  color: white;
+  height: 17px;
+  width: 200px;
+}
+
+#prompt:focus {
+  box-shadow: 0 0 3pt 2pt #719ece;
+  outline: none;
+  caret-color: white;
+}
+
+#promptbutton,
+#promptbutton2 {
+  margin: 0 auto;
+  margin-top: 7px;
+  background: transparent;
+  border: solid 2px black;
+  color: black;
+  border-radius: 5px;
+  display: inline;
+}
+
+#promptbutton:hover,
+#promptbutton2:hover {
+  background: rgb(206, 206, 206);
+}
+
+#herocarousel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background-image: url("./assets/img/Tileable Wood.jpg");
+  background-size: 10%;
+}
+
+#chartitle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 90px;
+  font-family: "Roboto";
+  color: white;
+  text-shadow: 2px 0 black, -2px 0 black, 0 2px black, 0 -2px black,
+    1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+}
+
+#costchar {
+  position: absolute;
+  top: 150px;
+  right: 0;
+  left: 0px;
+  margin: auto;
+  text-align: center;
+  font-size: 20px;
+  height: 50px;
+  width: 300px;
+  color: white;
+}
+
+#costimg {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+#costtext {
+  vertical-align: middle;
+  font-family: "Roboto";
+}
+
+#purchasebtn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 100px;
+  height: 50px;
+  width: 300px;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Montserrat';
+}
+
+.purchase {
+  background-color: rgb(3, 173, 3);
+  border: none;
+}
+
+.purchased {
+  background-color: rgb(42, 41, 41);
+  border: solid 2px white;
+}
+
+.cantpurchase {
+  background-color:rgb(164, 0, 0);
+  border: none;
+}
+
+.swiper {
+  right: 1rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0px;
+  margin: auto;
+  width: 1707px;
+}
+
+.swiper-slide {
+  text-align: center;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  color: white;
+  background-color: black;
+  font-size: 250px;
+  font-weight: bold;
+  font-family: monospace;
+  border-radius: 5px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.swiper-slide img {
+  width: 300;
+  height: 500;
+}
+
+.container > div {
+  top: 25vh;
+  height: 50vh;
+}
+
+#herobtn {
+  position: absolute;
+  left: 49px;
+  top: 19%;
+  height: 50px;
+  width: 260px;
+  background-image: url("./assets/img/Heroes_Sign.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#herobtn:hover {
+  background-image: url("./assets/img/HeroesGlowing.png");
+}
+
+#upgradebtn {
+  position: absolute;
+  left: 125px;
+  top: 27%;
+  height: 100px;
+  width: 100px;
+  background-image: url("./assets/img/Upgrades.png");
+  background-repeat: no-repeat;
+  background-size: 100px 100px;
+}
+
+#upgradebtn:hover {
+  filter: invert(1);
+}
+
+#upgradesmenu {
+  background-image: url("./assets/img/Tileable Wood.jpg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+#herobtn2 {
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  border-radius: 5px;
+  width: 100px;
+  height: 50px;
+  font-size: 25px;
+  background: rgb(164, 0, 0);
+  color: white;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  border: none;
+}
+
+#herobtn2:hover {
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  border: solid 2px black;
+}
+
+.arrowcon,
+.arrowcon2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 75px;
+  height: 200px;
+  border: 2px solid white;
+  z-index: 1;
+  backdrop-filter: blur(15px);
+}
+
+.arrowcon {
+  left: 0;
+  border-top-right-radius: 200% 200%;
+  border-bottom-right-radius: 200% 200%;
+  border-left: 0;
+  left: 0px;
+}
+
+.arrowcon2 {
+  right: 0;
+  border-top-left-radius: 200% 200%;
+  border-bottom-left-radius: 200% 200%;
+  border-right: 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  --swiper-theme-color: white;
+  height: 200px !important;
+  width: 75px !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  margin: auto !important;
+}
+
+.swiper-button-prev {
+  left: 0 !important;
+  border-top-right-radius: 200% 200% !important;
+  border-bottom-right-radius: 200% 200% !important;
+  border-left: 0 !important;
+}
+
+.swiper-button-next {
+  right: 0 !important;
+  border-top-left-radius: 200% 200% !important;
+  border-bottom-left-radius: 200% 200% !important;
+  border-right: 0 !important;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  margin-top: 5px;
+}
+
+.tooltip1 {
+  left: 55px;
+}
+
+.tooltip2 {
+  left: 68px;
+}
+
+.tooltip3 {
+  left: 50px;
+}
+
+.tooltip4 {
+  left: 16px;
+}
+
+.tooltip5 {
+  left: 35px;
+}
+
+.tooltip6 {
+  left: 20px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  backdrop-filter: blur(15px);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+}
+
+.tooltip.tooltip1 .tooltiptext {
+  width: 120px;
+  margin-left: -60px;
+}
+
+.tooltip.tooltip2 .tooltiptext {
+  width: 500px;
+  margin-left: -250px;
+}
+
+.tooltip.tooltip3 .tooltiptext, .tooltip.tooltip6 .tooltiptext {
+  width: 100px;
+  margin-left: -50px;
+}
+
+.tooltip.tooltip4 .tooltiptext {
+  width: 50px;
+  margin-left: -25px;
+}
+
+.tooltip.tooltip5 .tooltiptext {
+  width: 300px;
+  margin-left: -150px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.cantafford {
+  background: rgb(164, 0, 0);
+}
+
+#settingsbox {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+}
+
+.settingsbtn {
+  width: 70px;
+  height: 70px;
+  background-color:rgb(42, 41, 41);
+  border: solid white;
+  border-radius: 5px;
+}
+
+#settingstitle {
+  color: white;
+  font-family: 'Montserrat';
+}
+
+.settingsimg {
+  filter: invert(1);
+}
+
+#settingsinnerbox {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 400px;
+  height: 400px;
+  border: solid black;
+  backdrop-filter: blur(70px);
+  border-radius: 7px;
+  z-index: 2;
+}
+
+@media (max-width: 950px) {
+  #monsterimg {
+    width: 300px;
+    height: 300px;
+  }
+  #monsterimg:hover {
+    width: 350px;
+    height: 350px;
+  }
+  #monsterimg:active:hover {
+    width: 325px;
+    height: 325px;
+  }
+  #promptbox {
+    width: 375px;
+  }
+  #settingsinnerbox {
+    width: 350px;
+    height: 400px;
+  }
+  .swiper {
+    width: 400px;
+    height: 300px;
+  }
+  #costchar {
+    top: 125px;
+  }
+}
+
+.starimg {
+  height: 15px;
+  width: 15px;
+  margin: auto;
+}
+
+.starimg#onei {
+  margin-right: 15px;
+}
+
+.starimg#twoi {
+  margin-left: 15px;
+}
+
+#credits {
+  position: absolute;
+  height: 250%;
+  width: 100%;
+  background-color: black;
+  color: white;
+  z-index: 4;
+  top: 0;
+  left: 0;
+}
+
+#credits h1#creditstitle {
+  font-family: 'Montserrat';
+  margin-bottom: 600px;
+}
+
+#credits h3 {
+  font-family: 'Montserrat';
+  margin-top: 50px;
+}
+
+#credits h3:first-of-type {
+  margin-top: 10px;
+}
+
+#credits strong {
+  font-family: 'Roboto';
+  display: block;
+  margin-top: 5px;
+}
+
+#credits h2 {
+  font-family: 'Montserrat';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  margin-top: 3000px;
+}
+
+#imagecat {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+#imagecat img {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}

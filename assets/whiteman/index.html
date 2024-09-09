@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>WHITEMAN</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="header-outer">
+                <div class="intro-blur">
+                </div>
+                <div class="header-inner">
+                    <h1 class="center">WHITEMAN</h1>
+                </div>
+            
+        </header>
+        <div class="padding"></div>
+        <div class="grid-view">
+            <div class="scroll-text">
+                <h1>About</h1>
+                <p>
+                    Based on a <strong>TRUE STORY</strong>.<br><br>
+                    Whiteman is an intense, action-packed, high-quality, adventurous, and inspiring film created and published by <strong>Rizz Productions</strong>.
+                </p>
+                <h1 class="padding">Our Story</h1>
+                <p>
+                    Founded in Ohio, Rizz Productions is a well-known company. We have developed many popular productions such as <strong>WHITEMAN</strong>.
+                </p>
+            </div>
+            <div class="trailer">
+                <video poster="assets/whiteman.png" onclick="this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2 ? this.pause() : this.play()"><source src="assets/trailer.mp4" type="video/mp4"/></video>
+            </div>
+        </div>
+
+        <header class="header-outer">
+            <div class="intro-blur">
+            </div>
+            <div class="header-inner">
+                <h1 class="center" id="countdown">0:00:00</h1>
+            </div>
+        </header>
+
+        <div class="xl-padding"></div>
+        <div id="the-video-holder">
+            <strong><h1>IT IS HERE!</h1></strong>
+            <div class="the-video">
+                <video poster="assets/whiteman.png" onclick="this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2 ? this.pause() : this.play()"><source src="assets/whiteman.mp4" type="video/mp4"/></video>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
